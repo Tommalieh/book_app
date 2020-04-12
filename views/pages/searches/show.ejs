@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+    <form action="/searches/show">
+        <input type="text" name="keyword" id="keyword" placeholder="Enter a title or author">
+        <label >
+            <span>Title</span>
+            <input type="radio" name="searchBy" value="title" id="title">
+        </label>
+        <label >
+            <span>Author</span>
+            <input type="radio" name="searchBy" value="author" id="author">
+        </label>
+        <input type="submit">
+    </form>
+</body>
+</html>
