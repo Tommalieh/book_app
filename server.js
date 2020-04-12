@@ -14,6 +14,7 @@ app.use(express.static('./public'));
 
 app.use(express.urlencoded({ extended: true }));
 
+
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
@@ -25,10 +26,10 @@ app.get('/searches/new', (req, res) => {
 });
 
 app.post('/searches', (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     const title = req.body.keyword;
     const searchBy = req.body.searchBy;
-    console.log(title)
+    // console.log(title)
     const url = `https://www.googleapis.com/books/v1/volumes?q=${title}+in${searchBy}:${title}`;
     superagent.get(url).then(apiData => {
         const books = [];
@@ -37,13 +38,19 @@ app.post('/searches', (req, res) => {
                 const book = new Book(bookItem);
                 // console.log(book);
                 books.push(book);
-                console.log(books);
+                // console.log(books);
             }
         });
         // console.log(apiData.body.items[0].volumeInfo);
         res.render('./pages/searches/show', {books: books});
-    })
+    }).catch((err) => {
+        errorHandler(err, req, res);
+    });
 });
+
+
+app.use('*', notFoundHandler);
+app.use(errorHandler);
 
 function Book(bookData) {
     this.title = bookData.volumeInfo.title;
@@ -51,5 +58,16 @@ function Book(bookData) {
     bookData.volumeInfo.description != undefined ? this.description = bookData.volumeInfo.description : this.description = 'Discription goes here...'
     bookData.volumeInfo.imageLinks != undefined ? this.imageUrl = bookData.volumeInfo.imageLinks.thumbnail.replace('http', 'https') : this.imageUrl = 'filler'
 }
+
+
+
+function errorHandler(error, req, res) {
+    res.status(500).render('./pages/error', {error: error});
+}
+function notFoundHandler(req, res) {
+    res.status(404).send('NOT FOUND!!');
+}
+
+
 
 app.listen(PORT, () => console.log(`We're live on port ${PORT} BB ^ o ^`));
