@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search</title>
+    <title>Search Results</title>
 </head>
+
 <body>
-    <form action="/searches/show">
-        <input type="text" name="keyword" id="keyword" placeholder="Enter a title or author">
-        <label >
-            <span>Title</span>
-            <input type="radio" name="searchBy" value="title" id="title">
-        </label>
-        <label >
-            <span>Author</span>
-            <input type="radio" name="searchBy" value="author" id="author">
-        </label>
-        <input type="submit">
-    </form>
+    <% books.forEach(book => {%>
+    <div>
+        <img src="<%= book.imageUrl%>" />
+        <h3> <%= book.title %> </h3>
+        <h4> <%= book.authors %> </h4>
+        <p> <%= book.description %> </p>
+    </div>
+    <br>
+    <% }) %>
 </body>
+
 </html>
