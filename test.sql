@@ -1,0 +1,1 @@
+INSERT INTO books (bookid, authors, title, isbn, imageurl, description, bookshelf) VALUES ('OP9eDwAAQBAJ', 'Linda Macho', 'Quilting Patterns', 9780486838151, 'http://books.google.com/books/content?id=TZqxDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api','food', 456456);

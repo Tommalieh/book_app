@@ -34,10 +34,11 @@ header a{
     padding-right: 5%;
 }
 
-header h1{
+header a:nth-child(1){
     display: grid;
     grid-area: logo;
     padding-left: 5%;
+    justify-content:start ;
 }
 
 header #pageTitle{

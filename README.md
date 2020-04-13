@@ -5,7 +5,7 @@
   * Estimate of time needed to complete: 1 hours
   * Start time: 4:58 PM
   * Finish time: 5:23 PM
-  * Actual time needed to complete: 25 Minutes
+  * Actual time needed to complete: 25 minutes
 
 
 * Number and name of feature: Feature#2 Rendering Search Results
@@ -20,6 +20,26 @@
   * Start time: 8:15 PM
   * Finish time: 11:46 PM
   * Actual time needed to complete: 3 Hours and 31 Minutes
+
+* Number and name of feature: Feature#4 Add books to the database
+  * Estimate of time needed to complete: 3 hours
+  * Start time: 4:28 PM
+  * Finish time: 6:32 PM
+  * Actual time needed to complete: 2 hours and 4 minutes
+
+
+* Number and name of feature: Feature#5 Rendering Render Saved Books
+  * Estimate of time needed to complete: 2 hours
+  * Start time: 6:40 PM
+  * Finish time: 7:58 PM
+  * Actual time needed to complete: 1 hours and 18 minutes
+
+
+* Number and name of feature: Feature#6 Request book details 
+  * Estimate of time needed to complete: 3 hours
+  * Start time: 8:15 PM
+  * Finish time: 11:34 PM
+  * Actual time needed to complete: 3 Hours and 29 Minutes
 
 
 * Number and name of feature: Feature#4 Error Handling
