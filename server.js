@@ -101,7 +101,7 @@ app.post('/books', (req, res) => {
                 const bookData = apiData.body;
                 const book = new Book(bookData);
                 const SQL = 'INSERT INTO books (bookid, authors, title, isbn, imageurl, description, bookshelf) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *'
-                const values = [book.bookID, book.authors, book.title, Number(book.isbn), book.imageUrl, book.description, ' ']
+                const values = [book.bookID, book.authors, book.title, book.isbn, book.imageUrl, book.description, ' ']
                 client.query(SQL, values).then(result => {
                     res.redirect(`/books/${result.rows[0].bookid}`)
                     // res.status(200).json(result.rows[0]);
