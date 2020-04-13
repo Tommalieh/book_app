@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search</title>
+    <title>Book Details</title>
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,24 +14,17 @@
             <a href="/"><h1>Best Books!</h1></a>
             <a href="#"><i class="fa fa-bars"></i></a>
         </nav>
-        <section id="pageTitle">Search by Title or Author</section>
+        <section id="pageTitle">Book Details</section>
     </header>
-
-    <form action="/searches/" method="POST">
-        <input type="text" name="keyword" id="keyword" placeholder="Enter a title or author" required>
-        <br>
-        <label >
-            <span>Title</span>
-            <input type="radio" name="searchBy" value="title" id="title" required>
-        </label>
-        <br>
-        <label >
-            <span>Author</span>
-            <input type="radio" name="searchBy" value="author" id="author" required>
-        </label>
-        <br>
-        <input type="submit" value="Search the Google Books API">
-    </form>
+<main>
+    <div>
+        <img src="<%= book.imageurl%>" />
+        <h3> <%= book.title %> </h3>
+        <h4> <%= book.authors %> </h4>
+        <p style="background-color: #eeeeee; border-radius: 5px; padding: 0 5%; line-height: 150%;"> <%= book.description%> </p>
+        <h4> ISBN: <%= book.isbn%> </h4>
+    </div>
+</main>
 
     <footer>
         <ul>
@@ -39,7 +32,7 @@
         <li>2</li>
         <li>3</li>
         <li>4</li>
-        </ul>
+    </ul>
     </footer>
 </body>
 </html>
