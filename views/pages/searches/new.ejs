@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../../layout/head')%>
     <title>Search</title>
-    <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
-        <nav>
-            <a href="/"><h1>Best Books!</h1></a>
-            <a href="#"><i class="fa fa-bars"></i></a>
-        </nav>
+        <%- include('../../layout/header')%>
+
         <section id="pageTitle">Search by Title or Author</section>
     </header>
 
@@ -33,13 +27,7 @@
         <input type="submit" value="Search the Google Books API">
     </form>
 
-    <footer>
-        <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        </ul>
-    </footer>
+    <%- include('../../layout/footer')%>
+
 </body>
 </html>

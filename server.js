@@ -8,7 +8,7 @@ const express = require('express');
 
 const superagent = require('superagent');
 
-const methodOverride = require('method-override'); 
+const methodOverride = require('method-override');
 
 const PORT = process.env.PORT || 4000;
 
@@ -27,19 +27,33 @@ app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
+app.get('/', collectionHandler);
+app.get('/searches/new', searchFormHandler);
+app.post('/searches', searchResultsHandler);
+app.get('/books/:bookID', bookDetailsHandler);
+app.post('/books', addBookToCollection);
+app.put('/update/:bookid', updateBookDetails);
+
+
+
+
+
+
+function collectionHandler(req, res) {
     const SQL = 'SELECT * FROM books'
     client.query(SQL).then(result => {
         console.log(result.rows);
         res.render('./pages/index', { book: result.rows })
     })
-});
+}
 
-app.get('/searches/new', (req, res) => {
+
+function searchFormHandler(req, res) {
     res.render('./pages/searches/new');
-});
+}
 
-app.post('/searches', (req, res) => {
+
+function searchResultsHandler(req, res) {
     // console.log(req.body);
     const title = req.body.keyword;
     const searchBy = req.body.searchBy;
@@ -63,9 +77,10 @@ app.post('/searches', (req, res) => {
         console.log(books.length);
         errorHandler(err, req, res);
     });
-});
+}
 
-app.get('/books/:bookID', (req, res) => {
+
+function bookDetailsHandler(req, res){
     // res.status(200).send(req.params.bookID)
     const bookID = req.params.bookID;
     console.log('bookid', bookID);
@@ -85,11 +100,11 @@ app.get('/books/:bookID', (req, res) => {
             })
         }
     })
+}
 
-})
 
 
-app.post('/books', (req, res) => {
+function addBookToCollection(req, res){
     const bookID = req.body.bookID;
     console.log(bookID);
     const SQL = 'SELECT * FROM books WHERE bookID=$1'
@@ -116,21 +131,23 @@ app.post('/books', (req, res) => {
             });
         }
     })
-})
+}
 
-app.put('/update/:bookid', (req, res) => {
-    // console.log(req.body);
+
+
+
+function updateBookDetails(req, res){
+        // console.log(req.body);
     // console.log(req.params.bookid)
-    const {title, author, isbn, imageurl, description} = req.body
+    const { title, author, isbn, imageurl, description } = req.body
     // console.log (title, author, isbn, imageurl, description);
     const SQL = 'UPDATE books SET title=$1, authors=$2, isbn=$3, imageurl=$4, description=$5 WHERE bookid=$6 RETURNING *'
     const values = [title, author, isbn, imageurl, description, req.params.bookid];
-    client.query(SQL, values).then(result =>{
+    client.query(SQL, values).then(result => {
         console.log(result.rows[0])
         res.redirect(`/books/${req.params.bookid}`)
     })
-
-})
+}
 
 app.delete('/delete/:bookid', (req, res) => {
     const SQL = 'DELETE FROM books WHERE bookid = $1'
@@ -139,6 +156,8 @@ app.delete('/delete/:bookid', (req, res) => {
         res.redirect('/');
     })
 })
+
+
 
 
 app.use('*', notFoundHandler);
