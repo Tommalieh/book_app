@@ -41,6 +41,19 @@
   * Finish time: 11:34 PM
   * Actual time needed to complete: 3 Hours and 29 Minutes
 
+* Number and name of feature: Feature#6 Update book details
+  * Estimate of time needed to complete: 1 hours
+  * Start time: 4:00 PM
+  * Finish time: 5:38 PM
+  * Actual time needed to complete: 1 hours and 38 minutes
+
+
+* Number and name of feature: Feature#7 Delete book 
+  * Estimate of time needed to complete: 1 hours
+  * Start time: 5:40 PM
+  * Finish time: 6:34 PM
+  * Actual time needed to complete: 54 Minutes
+
 
 * Number and name of feature: Feature#4 Error Handling
   * ***This feature was added during the process of adding the previous features***.
