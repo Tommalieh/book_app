@@ -67,6 +67,7 @@ div img {
 }
 
 footer{
+    margin-top: 5%;
     background-color: black;
     position: fixed;
     bottom: 0;
@@ -112,7 +113,7 @@ body h1:nth-child(2){
     margin: 5%;
 }
 
-form{
+.searchForm{
     width: 70%;
     margin: 0 auto;
     display: flex;
@@ -123,11 +124,11 @@ form{
 }
 
 
-input{
+.searchForm input{
     display: inline-block;
 }
 
-input[type=text]{
+.searchForm input[type=text]{
     width: 100%;
     height: 15vh;
     text-align: center;
@@ -135,7 +136,7 @@ input[type=text]{
     border: none;
 }
 
-input[type=submit]{
+.searchForm input[type=submit]{
     width: 100%;
     height: 15vh;
     background-color: black;
@@ -144,7 +145,7 @@ input[type=submit]{
     border-radius: 5px;
 }
 
-label{
+.searchForm label{
     background-color: #d8d8d8;
     border: none;
     border-radius: 5px;
@@ -154,12 +155,20 @@ label{
     align-items: center;
 }
 
-label span{
+.searchForm label span{
     padding-left: 5%;
 }
 
-label input{
+.searchForm label input{
     padding-left: 1%;
+}
+
+.updateForm{
+    margin-bottom: 10%;
+}
+.updateForm input{
+    display: block;
+    /* margin-bottom: 10%; */
 }
 
 /* } */
