@@ -1,18 +1,44 @@
 /* @media all and (max-width: 768px){ */
 
 
-
 body{
     background-color: #9b9b9b;
 }
 
 
-header{
+header nav{
     background-color: black;
     font-family: sans-serif;
     color: #c3c3c3;
     position: sticky;
     top: 0;
+    font-size: 180%;
+}
+
+header div{
+    transition: all 0.8s ease;
+    display: none;
+    justify-content: space-around;
+    background-color: #000000c7;
+}
+
+.flex{
+    display: flex;
+}
+
+#pageTitle{
+    font-size: 85%;
+    font-family: 'Anton', sans-serif;
+}
+
+span{
+    margin-left: 1%;
+    padding-top: 0.3%;
+    background-color: whitesmoke;
+    border-radius: 50% ;
+    padding: 0 1%;
+    text-align: center;
+    color: gray;
 }
 
 nav{
@@ -32,6 +58,7 @@ header a{
     justify-content: flex-end;
     text-decoration: none;
     padding-right: 5%;
+    font-family: 'Anton', sans-serif;
 }
 
 header a:nth-child(1){
@@ -60,20 +87,59 @@ main div{
     grid-template-columns: 70%;
     justify-content: center;  
     align-items: space-around;  
+    box-shadow: 0px 0px 22px darkslategray;
+    margin-bottom: 10%;
 }
+
+
 
 div img {
     margin: auto auto;
+    width: 40%;
+    box-shadow: 0px 0px 22px darkslategray;
+}
+
+
+div a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    
+}
+
+div a button{
+    transition: all 0.8s ease;
+    border: none;
+    width: 50%;
+    height: 6vh;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    box-shadow: 0px 0px 12px #414141;
+    opacity: 0.8;
+    font-weight: bold;
+}
+
+div a button:hover{
+    transform: t;
+    opacity: 1;
+    margin-top: -3%;
+    width: 55%;
+    height: 6.5vh;
+    cursor: pointer;
+    box-shadow: 0px 0px 12px #2b1b1b;
 }
 
 footer{
-    margin-top: 5%;
+    margin-top: 19%;
     background-color: black;
     position: fixed;
     bottom: 0;
     color: white;
     height: 5vh;
     width: 100%;
+    font-size: 150%;
 }
 
 footer ul{
@@ -90,6 +156,7 @@ h3{
     align-items: center;
     color: red;
     text-align: center;
+    font-family: 'Orbitron', sans-serif;
 }
 
 h4{
@@ -97,6 +164,7 @@ h4{
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-family: 'Orbitron', sans-serif;
 }
 
 p{
@@ -171,5 +239,92 @@ body h1:nth-child(2){
     /* margin-bottom: 10%; */
 }
 
+#updateButton{
+    float: left;
+}
+#updateButton, #deleteButton{
+    transition: all 0.8s ease;
+    border: none;
+    width: 40%;
+    height: 4.5vh;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    box-shadow: 0px 0px 12px #414141;
+    opacity: 0.8;
+    font-weight: bold;
+}
 
+#updateButton:hover, #deleteButton:hover{
+    transform: t;
+    opacity: 1;
+    cursor: pointer;
+    box-shadow: 0px 0px 12px #2b1b1b;
+}
+
+#detailsForm{
+    display: flex;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+#editForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+#editForm{
+    transition: all 0.8s ease;
+    background-color: silver;
+    box-shadow: 0px 0px 5px black;
+}
+
+#editForm legend{
+    font-size: x-large;
+    text-transform: uppercase;
+    margin-bottom: 3%;
+    font-weight: bold;
+}
+
+#editForm button{
+    transition: all 0.8s ease;
+    border: none;
+    width: 40%;
+    height: 4.5vh;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    box-shadow: 0px 0px 12px #414141;
+    opacity: 0.8;
+    font-weight: bold;
+}
+
+#editForm button:hover{
+    transform: t;
+    opacity: 1;
+    cursor: pointer;
+    box-shadow: 0px 0px 12px #2b1b1b;
+}
+
+
+#editForm input[type=text], #editForm textarea{
+    width: 85%;
+    margin-bottom: 2%;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(51, 49, 49);
+    color: lightgray;
+    box-shadow: 0px 0px 5px black;
+    text-align: center;
+}
+
+#editForm input[type=text]{
+    height: 3vh;
+}
 /* } */
